@@ -1,0 +1,19 @@
+{
+  "id": "com.jean.netflix.clone",
+  "version": "1.0.0",
+  "name": "Netflix UI 1:1 Theme",
+  "description": "A complete pixel-accurate clone of Netflix's UI applied directly on top of Stremio.",
+  "resources": [],
+  "types": [],
+  "catalogs": [],
+  "behaviorHints": {
+    "configurable": false,
+    "configurationRequired": false
+  },
+
+  "ui": {
+    "stylesheet": "/* ===== NETFLIX 1:1 UI THEME (INLINE) ===== */\n\nbody, html, .body, .main, .container { background-color:#141414 !important; color:#fff !important; font-family:'Inter','Roboto Condensed',sans-serif !important; }\n\nheader, nav, .top-header { background:rgba(20,20,20,0.97) !important; height:68px !important; border-bottom:1px solid #222 !important; }\nheader a, nav a { color:#e5e5e5 !important; font-size:15px !important; font-weight:500 !important; }\nheader a:hover { color:#fff !important; }\n.active, .selected, a:active, a:focus { color:#E50914 !important; }\n\n.section-title, h2, h3 { font-size:1.4rem !important; color:#fff !important; font-weight:700 !important; margin:10px 0 !important; }\n\n.meta-items, .row-items { display:flex !important; gap:12px !important; padding:6px 0 !important; }\n\n.meta-item, .poster, .poster-container { border-radius:4px !important; overflow:hidden !important; background:#000 !important; box-shadow:0 4px 12px rgba(0,0,0,0.7) !important; transition:transform .25s ease, box-shadow .25s ease !important; }\n.poster img, .meta-item img { border-radius:4px !important; }\n\n.poster:hover, .meta-item:hover { transform:scale(1.08) !important; box-shadow:0 8px 30px rgba(0,0,0,0.9) !important; z-index:10 !important; }\n\ninput[type=text], .search-input { background:#333 !important; border:1px solid #444 !important; color:#fff !important; border-radius:4px !important; }\ninput::placeholder { color:#aaa !important; }\n\n::-webkit-scrollbar { width:8px !important; }\n::-webkit-scrollbar-thumb { background:#333 !important; border-radius:4px !important; }\n::-webkit-scrollbar-track { background:#111 !important; }",
+
+    "javascript": "/* ===== NETFLIX UI BEHAVIOUR (INLINE) ===== */\n\n// Smooth hover behavior\n document.addEventListener('mouseover', e => { let c=e.target.closest('.meta-item, .poster'); if(c){ c.style.transition='transform .26s ease, box-shadow .26s ease'; }});\n\n// Keep background consistent like Netflix\n new MutationObserver(()=>{ document.body.style.backgroundColor='#141414'; }).observe(document.body,{childList:true,subtree:true});"
+  }
+}
